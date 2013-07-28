@@ -18,7 +18,7 @@ class Catalog(Resource):
 		if product_id >= len(products):
 			return {}, 400
 		else:
-			return {str(product_id): products[product_id]}, 200, {'Server': 'Demo REST API'}
+			return {str(product_id): products[product_id-1]}, 200, {'Server': 'Demo REST API'}
 
 api.add_resource(Catalog, '/catalog/<int:product_id>')
 
